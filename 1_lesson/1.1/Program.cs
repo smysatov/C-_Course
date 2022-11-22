@@ -1,4 +1,4 @@
-﻿// вход 2 числа, проверка, является ли 1ое квадратом 2го
+﻿// вход 2 числа, проверка, является ли 2ое квадратом 1го
 
 Console.WriteLine("Enter first number");
 int num1 = int.Parse(Console.ReadLine());
