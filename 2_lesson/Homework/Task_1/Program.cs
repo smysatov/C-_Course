@@ -4,6 +4,13 @@
 Console.WriteLine("Write a three digit number: ");
 int num = int.Parse(Console.ReadLine());
 
-num = num / 10;
-num = num % 10;
-Console.WriteLine($"Second digit {num}");
+if (99<num && num<1000)
+{
+    num = num / 10;
+    num = num % 10;
+    Console.WriteLine($"Second digit {num}");
+}
+else
+{
+    Console.WriteLine("Wrong Number");
+}
