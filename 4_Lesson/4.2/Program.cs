@@ -2,6 +2,9 @@
 
 int Sum(int num)
 {
+    if (num == 0)
+        return (1);
+
     int i = 0;
     while (num > 0)
     {
