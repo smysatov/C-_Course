@@ -8,11 +8,11 @@ void Pal(int Num1, int Num2, int Num3, int Num4, int Num5)
 {
     if (Num1 == Num5 && Num2 == Num4)
     {
-        Console.WriteLine("Palindrome");
+        Console.WriteLine("Это палиндром");
     }
     else
     {
-        Console.WriteLine("This is not a Palindrome");
+        Console.WriteLine("Это не палиндром");
     }
 }
 
