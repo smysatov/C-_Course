@@ -1,6 +1,5 @@
-﻿//Задайте массив из 12 элементов, заполненный случайными
-//числами из промежутка [-9,9]. Найдите сумму отрицательных
-//и положительных элементов массива.
+﻿//Программа замены элементов массива: положительные элементы
+//заменяет на соответствующие отрицательные, и наоборот.
 
 void FillArray(int[] array)
 {
@@ -35,22 +34,13 @@ PrintArray(array);
 
 Console.WriteLine();
 
-void SumPosNeg(int[] array)
+void exchange(int[] array)
 {
-    int pos,
-        neg;
-    pos = neg = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] >= 0)
-            pos += array[i];
-        else
-        {
-            neg += array[i];
-        }
-    }
-    Console.WriteLine($"Сумма положительных элементов: {pos}");
-    Console.WriteLine($"Сумма отрицательных элементов: {neg}");
+    int length = array.Length;
+
+    for (int i = 0; i < length; i++)
+        array[i] = -array[i];
 }
 
-SumPosNeg(array);
+exchange(array);
+PrintArray(array);
