@@ -1,6 +1,5 @@
-﻿//Задан одномерный массив из 123 случайных чисел. Найти
-//количество элементов массиваб значения которых лежат в
-//отрезке [10,99].
+﻿//Произведение чисел в одномерном массиве. Парой считаем
+//первый и последний элемент, второй и предпоследний и т.д.
 
 void FillArray(int[] array)
 {
@@ -35,15 +34,18 @@ PrintArray(array);
 
 Console.WriteLine();
 
-void Find(int[] array)
+int[] Proizv(int[] array)
 {
-    int sum = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] >= 10 && array[i] <= 99)
-            sum++;
-    }
-    Console.Write($"Количество эл. массива на отрезке [10,99]: {sum}");
+    int arraylength = array.Length;
+    int multiplylength = arraylength / 2 + arraylength % 2;
+    int[] multiply = new int[multiplylength];
+    for (int i = 0; i < arraylength / 2; i++)
+        multiply[i] = array[i] * array[arraylength - i - 1];
+    if (multiply[multiplylength - 1] == 0)
+        multiply[multiplylength - 1] = array[multiplylength - 1];
+    return multiply;
 }
 
-Find(array);
+int[] multiply = Proizv(array);
+Console.WriteLine("Результат после перемножения элементов");
+PrintArray(multiply);
