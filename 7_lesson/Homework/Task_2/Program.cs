@@ -30,10 +30,13 @@ void PrintArray(int[,] arr)
 
 string Position(int[,] arr, int posrows, int poscolumns)
 {
-    for (int i = 0; i < arr.GetLength(0); i++)
-        for (int j = 0; j < arr.GetLength(1); j++)
-            if (posrows <= arr.GetLength(0) && poscolumns <= arr.GetLength(1))
-                return $"Значение элемента массива: {arr[posrows - 1, poscolumns - 1]}";
+    if (
+        posrows <= arr.GetLength(0)
+        && poscolumns <= arr.GetLength(1)
+        && posrows > 0
+        && poscolumns > 0
+    )
+        return $"Значение элемента массива: {arr[posrows - 1, poscolumns - 1]}";
     return "В массиве нет элемента с такой позицией";
 }
 
